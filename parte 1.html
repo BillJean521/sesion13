@@ -54,10 +54,14 @@
         let op=parseInt(prompt("Elija la operacion deseada (1 = Suma, 2= Resta, 3 = Producto, 4 = Division, 5 = Potencia) :"));
 
         let resultado=calculadora(a,b,op);
-        document.write("<h1> Calculadora en JS </h1>")
+        document.write("<h1> Calculadora en JS </h1>","<br>");
         if(op>0 && op<=5){ 
             console.log("Resultado: ",resultado);
             document.write("Resultado: ",resultado,"<br>");
+        }
+        else{
+            console.log(resultado);
+            document.write(resultado);
         }
     </script>
 
