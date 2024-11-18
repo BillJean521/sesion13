@@ -6,6 +6,13 @@
     <title>Ejercicio 1</title>
 </head>
 <body>
+
+    <style>
+        *{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+
     <script>
         //Funciones aritmeticas
         function suma(a,b){ //funtion= declarar funcion; nombre; ()=parametros o entradas
@@ -44,13 +51,14 @@
 
         let a =parseFloat(prompt("Ingrese un numero: "));
         let b =parseFloat(prompt("Ingrese otro numero: "));
-        let op=prompt("Elija la operacion deseada (1 = Suma, 2= Resta, 3 = Producto, 4 = Division, 5 = Potencia) :");
+        let op=parseInt(prompt("Elija la operacion deseada (1 = Suma, 2= Resta, 3 = Producto, 4 = Division, 5 = Potencia) :"));
 
         let resultado=calculadora(a,b,op);
         document.write("<h1> Calculadora en JS </h1>")
-        console.log("Resultado: ",resultado);
-        document.write("Resultado: ",resultado,"<br>");
-
+        if(op>0 && op<=5){ 
+            console.log("Resultado: ",resultado);
+            document.write("Resultado: ",resultado,"<br>");
+        }
     </script>
 
 </body>
