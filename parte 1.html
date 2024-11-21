@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 1</title>
+    <title>Calculadora</title>
 </head>
 <body>
 
@@ -14,50 +14,40 @@
     </style>
 
     <script>
-        //Funciones aritmeticas
-        function suma(a,b){ //funtion= declarar funcion; nombre; ()=parametros o entradas
-            return a+b;
-        }
-        function resta(a,b){
-            return a-b;
-        }
-        function multi(a,b){
-            return a*b;
-        }
-        function div(a,b){
-            return a/b;
-        }
-        function pow(a,b){
-            return a**b;
-        }
-
         //Funcion de la calculadora
         function calculadora (n1,n2,operacion){
             switch(operacion){
                 case 1:
-                    return suma(n1,n2);
+                    return n1+n2;
                 case 2:
-                    return resta(n1,n2);
+                    return n1-n2;
                 case 3:
-                    return multi(n1,n2);
+                    return n1*n2;
                 case 4:
-                    return div(n1,n2);
+                    return n1/n2;
                 case 5:
-                    return pow(n1,n2);
+                    return n1**n2;
                 default:
                     return "Operacion no valida, oprima F5 de nuevo para ingresar una valida"
             }
         }
 
-        let a =parseFloat(prompt("Ingrese un numero: "));
-        let b =parseFloat(prompt("Ingrese otro numero: "));
-        let op=parseInt(prompt("Elija la operacion deseada (1 = Suma, 2= Resta, 3 = Producto, 4 = Division, 5 = Potencia) :"));
+        let seguir="si"
+        while(seguir=="si"){
+            let a =parseFloat(prompt("Ingrese un numero: "));
+            let b =parseFloat(prompt("Ingrese otro numero: "));
+            let op=parseInt(prompt("Elija la operacion deseada (1 = Suma, 2= Resta, 3 = Producto, 4 = Division, 5 = Potencia) :"));
 
-        let resultado=calculadora(a,b,op);
-        document.write("<h1> Calculadora en JS </h1>","<br>");
-        console.log("Resultado: ",resultado);
-        document.write("Resultado: ",resultado,"<br>");
-        
+            let resultado = calculadora(a,b,op);
+            console.log("Resultado: ",resultado);
+            alert(`Resultado: ${resultado}`);
+            seguir = prompt("Desea hacer otra operacion (si/no)?").toLowerCase()
+            while(seguir != "si" && seguir !="no"){
+                alert("Opcion no valida");
+                seguir = prompt("Desea hacer otra operacion (si/no)?").toLowerCase();
+            }
+        }
+        document.write("<h1> Programa terminado </h1>");
     </script>
 
 </body>
